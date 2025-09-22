@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  background: linear-gradient(to bottom, #fff8dc, #ffe97f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.message {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  color: #c97a00;
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  z-index: 200;
+  padding: 0 10px;
+}
+
+.snoopy {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  max-width: 40vw;
+  z-index: 150;
+  animation: bounce 3s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-20px); }
+}
+
+.flower {
+  position: absolute;
+  top: -50px;
+  font-size: 2rem;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.7;
+  }
+}
+
+/* 📱 Ajustes para pantallas pequeñas (celulares) */
+@media (max-width: 600px) {
+  .message {
+    font-size: 1.5rem;
+    top: 10px;
+  }
+  .snoopy {
+    width: 150px;
+  }
+  .flower {
+    font-size: 1.5rem;
+  }
+}
+/* 💻 Ajustes para pantallas medianas (tabletas) */
+
